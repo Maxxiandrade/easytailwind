@@ -1,29 +1,15 @@
-import { useState, useReducer } from "react";
+import { useState } from "react";
+import { useMyContext } from "../../inputReducer";
 
-const initialState = {
-  input: ''
-}
 
-function reducer(state, action) {
-  switch(action.type){
-    case 'Button':
-      return { input : 'Button'};
-    case 'Radio':
-      return { input : 'Radio' };
-    case 'Checkbox':
-      return { input : 'Checkbox'};
-    case 'Text':
-      return { input: 'Text' };
-    default:
-      return { input: ''}
-  }
-}
 
 const InputSelect = () => {
+  const {dispatch} = useMyContext()
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const handleOptionSelect = (option: string) => {
     setSelectedOption(option);
+    dispatch({type: `${option}`})
   };
 
   return (
