@@ -2,11 +2,13 @@ import { useState } from "react";
 import InputSelect from "./InputSelect";
 import { FaArrowRight } from "react-icons/fa6";
 
+
+
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
 
   return (
-    <div className={`bg-neutral-200 dark:bg-neutral-700 h-screen p-5 pt-8 transition-all duration-300 ${open ? "w-72" : "w-20"} relative shadow-2xlxl inset-x-0 inset-y-0`}>
+    <div className={`bg-neutral-200 dark:bg-neutral-700 h-screen p-5 pt-8 transition-all duration-300 ${open ? "w-72" : "w-20"} relative shadow-right dark:shadow-innerCustom inset-x-0 inset-y-0`}>
       <button
         onClick={() => setOpen(!open)}
         className="text-4xl absolute -right-3 top-96 transform transition-transform duration-300"

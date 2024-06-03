@@ -1,4 +1,23 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
+
+const initialState = {
+  input: ''
+}
+
+function reducer(state, action) {
+  switch(action.type){
+    case 'Button':
+      return { input : 'Button'};
+    case 'Radio':
+      return { input : 'Radio' };
+    case 'Checkbox':
+      return { input : 'Checkbox'};
+    case 'Text':
+      return { input: 'Text' };
+    default:
+      return { input: ''}
+  }
+}
 
 const InputSelect = () => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);

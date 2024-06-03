@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        innerCustom: 'inset 0 1px 8px rgba(0, 0, 0, 0.5)', 
+      },
       fontFamily:{
         body: ['Poppins'],
         cursive: ['Parisienne']

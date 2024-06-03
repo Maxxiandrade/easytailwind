@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Banner from "./components/Banner/Banner";
 import InputRender from "./components/InputRender/InputRender";
-import InputCustomizer from "./components/InputCustomizer/InputCustomizer";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Footer from "./components/InputCustomizer/Footer"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,7 +22,7 @@ function App() {
           <Sidebar />
         </aside>
         <footer className="mb-5">
-          <InputCustomizer />
+          <Footer />
         </footer>
         <button
           className="absolute w-16 h-16 bottom-16 right-16 bg-neutral-900 dark:bg-neutral-300 rounded-full text-white dark:text-black font-semibold"
