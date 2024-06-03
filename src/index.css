@@ -1,7 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,3 +16,26 @@
   @apply shadow-lg;
   box-shadow: 10px 0 15px -3px rgba(0, 0, 0, 0.1), 4px 0 6px -2px rgba(0, 0, 0, 0.05);
 }
+
+select option.slate { @apply bg-slate-500 text-white; }
+select option.gray { @apply bg-gray-500 text-white; }
+select option.zinc { @apply bg-zinc-500 text-white; }
+select option.neutral { @apply bg-neutral-500 text-white; }
+select option.stone { @apply bg-stone-500 text-white; }
+select option.red { @apply bg-red-500 text-white; }
+select option.orange { @apply bg-orange-500 text-white; }
+select option.amber { @apply bg-amber-500 text-white; }
+select option.yellow { @apply bg-yellow-500 text-white; }
+select option.lime { @apply bg-lime-500 text-white; }
+select option.green { @apply bg-green-500 text-white; }
+select option.emerald { @apply bg-emerald-500 text-white; }
+select option.teal { @apply bg-teal-500 text-white; }
+select option.cyan { @apply bg-cyan-500 text-white; }
+select option.sky { @apply bg-sky-500 text-white; }
+select option.blue { @apply bg-blue-500 text-white; }
+select option.indigo { @apply bg-indigo-500 text-white; }
+select option.violet { @apply bg-violet-500 text-white; }
+select option.purple { @apply bg-purple-500 text-white; }
+select option.fuchsia { @apply bg-fuchsia-500 text-white; }
+select option.pink { @apply bg-pink-500 text-white; }
+select option.rose { @apply bg-rose-500 text-white; }

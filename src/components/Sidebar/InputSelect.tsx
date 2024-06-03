@@ -4,8 +4,8 @@ import { useMyContext } from "../../inputReducer";
 
 
 const InputSelect = () => {
-  const {dispatch} = useMyContext()
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const {dispatch, state} = useMyContext()
+  const [selectedOption, setSelectedOption] = useState<string | null>(state.input);
 
   const handleOptionSelect = (option: string) => {
     setSelectedOption(option);
@@ -15,14 +15,14 @@ const InputSelect = () => {
   return (
     <>
       <div className="flex justify-center">
-        <h1 className="text-4xl text-neutral-900 dark:text-neutral-300">Input Select</h1>
+        <h1 className="text-4xl text-neutral-900 dark:text-neutral-300 font-kanit">Input Select</h1>
       </div>
       <br />
       <br />
       <br />
       <ul className="flex-col justify-center">
         <li
-          className={`text-4xl ${selectedOption === "Button" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"}  cursor-pointer`}
+          className={`text-4xl font-ubuntu ${selectedOption === "Button" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"}  cursor-pointer`}
           onClick={() => handleOptionSelect("Button")}
         >
           Button
@@ -30,7 +30,7 @@ const InputSelect = () => {
         <br />
         <br />
         <li
-          className={`text-4xl ${selectedOption === "Radio" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"}  cursor-pointer`}
+          className={`text-4xl font-ubuntu ${selectedOption === "Radio" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"}  cursor-pointer`}
           onClick={() => handleOptionSelect("Radio")}
         >
           Radio
@@ -38,7 +38,7 @@ const InputSelect = () => {
         <br />
         <br />
         <li
-          className={`text-4xl ${selectedOption === "Checkbox" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"} cursor-pointer`}
+          className={`text-4xl font-ubuntu ${selectedOption === "Checkbox" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"} cursor-pointer`}
           onClick={() => handleOptionSelect("Checkbox")}
         >
           Checkbox
@@ -46,7 +46,7 @@ const InputSelect = () => {
         <br />
         <br />
         <li
-          className={`text-4xl ${selectedOption === "Text" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"} cursor-pointer`}
+          className={`text-4xl font-ubuntu ${selectedOption === "Text" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"} cursor-pointer`}
           onClick={() => handleOptionSelect("Text") }
         >
           Text
