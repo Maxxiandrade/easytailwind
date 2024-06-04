@@ -23,9 +23,9 @@ const BackgroundControls = () => {
       <br />
       <select
         
-        className={`rounded-full ${getColorClass(
+        className={`rounded-md ${getColorClass(
           bgColor
-        )} font-semibold border-2 border-black h-9 w-34 text-center text-black `}
+        )} font-semibold border border-black h-9 w-34 text-center text-black `}
         onChange={handleBgColorChange}
       >
         <option value="" disabled>
@@ -109,7 +109,7 @@ const BackgroundControls = () => {
         <select
           name=""
           id=""
-          className={`rounded-full  font-semibold border-2 border-black dark:text-neutral-900 text-center mt-1`}
+          className={`rounded-md  font-semibold border border-black dark:text-neutral-900 text-center mt-1`}
           onChange={handleBgIntensity}
         >
           <option value={'0'} className="dark:text-neutral-300">

@@ -41,9 +41,9 @@ const initialState = {
     duration:'',
     hover:'',
     hoverText:'',
-    hoverTextIntensity:'500',
+    hoverTextIntensity:'',
     hoverBg:'',
-    hoverBgIntensity:'500'
+    hoverBgIntensity:''
   }
   
 type ActionType = { type: string, payload: string }
@@ -122,11 +122,11 @@ type ActionType = { type: string, payload: string }
         if(action.payload === '9') return { ...state, duration: `transition duration-1000`}
         return { ...state, duration: `transition duration-${action.payload}`}
       case 'hoverText':
-        return { ...state, hoverText: `hover:text-${action.payload}-${state.hoverTextIntensity}`}
+        return { ...state, hoverText: `hover:text-${action.payload}-`}
       case 'hoverTextIntensity':
         return { ...state, hoverTextIntensity: action.payload }
       case 'hoverBg':
-        return { ...state, hoverBg: `hover:bg-${action.payload}-${state.hoverBgIntensity}`}
+        return { ...state, hoverBg: `hover:bg-${action.payload}-`}
       case 'hoverBgIntensity':
         return { ...state, hoverBgIntensity: action.payload}
       default:

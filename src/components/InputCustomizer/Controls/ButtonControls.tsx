@@ -9,9 +9,9 @@ import TextControls from "./ButtonColors/TextControls";
 const ButtonControls = () => {
   const [hoverEnabled, setHoverEnabled] = useState(false);
   const [hoverColor, setHoverColor] = useState("slate");
-  const [hoverIntensity, setHoverIntensity] = useState("500");
+  const [, setHoverIntensity] = useState("500");
   const [hoverBgColor, setHoverBgColor] = useState("");
-  const [hoverBgIntensity, setHoverBgIntensity] = useState("500");
+  const [, setHoverBgIntensity] = useState("500");
   const [hoverScale, setHoverScale] = useState("150");
   const [hoverDuration, setHoverDuration] = useState("200");
   const {dispatch} = useMyContext()
@@ -82,9 +82,9 @@ const ButtonControls = () => {
               <br />
               <div className="flex justify-between">
                 <select
-                  className={`rounded-full ${getColorClass(
+                  className={`rounded-md ${getColorClass(
                     hoverColor
-                  )} font-semibold border-2 border-black h-9 w-28 text-center text-black`}
+                  )} font-semibold border border-black h-9 w-28 text-center text-black`}
                   onChange={handleHoverColorChange}
                 >
                   <option value="" disabled>
@@ -161,11 +161,11 @@ const ButtonControls = () => {
                 <select
                   name=""
                   id=""
-                  className={`rounded-full  font-semibold border-2 border-black dark:text-neutral-900 h-9 w-34 text-center`}
+                  className={`rounded-md  font-semibold border border-black dark:text-neutral-900 h-9 w-34 text-center`}
                   onChange={handleHoverIntensity}
                 >
                   <option value="500" className="dark:text-neutral-300">
-                    Default (500)
+                    -
                   </option>
                   <option value="50">50</option>
                   <option value="100">100</option>
@@ -186,9 +186,9 @@ const ButtonControls = () => {
               <br />
               <div className="flex justify-between">
                 <select
-                  className={`rounded-full ${getColorClass(
+                  className={`rounded-md ${getColorClass(
                     hoverBgColor
-                  )} font-semibold border-2 border-black h-9 w-28 text-center text-black`}
+                  )} font-semibold border border-black h-9 w-28 text-center text-black`}
                   onChange={handleHoverBgColor}
                 >
                   <option value="" disabled>
@@ -268,11 +268,11 @@ const ButtonControls = () => {
                 <select
                   name=""
                   id=""
-                  className={`rounded-full  font-semibold border-2 border-black dark:text-neutral-900 h-9 w-34 text-center`}
+                  className={`rounded-md  font-semibold border border-black dark:text-neutral-900 h-9 w-34 text-center`}
                   onChange={handleHoverBgIntensity}
                 >
                   <option value="500" className="dark:text-neutral-300">
-                    Default (500)
+                    -
                   </option>
                   <option value="50">50</option>
                   <option value="100">100</option>

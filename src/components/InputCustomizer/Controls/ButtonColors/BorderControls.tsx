@@ -4,7 +4,7 @@ import {useMyContext} from "../../../../inputReducer";
 const BorderControls = () => {
   const {dispatch} = useMyContext()
   const [borderColor, setBorderColor] = useState("slate");
-  const [borderIntensity, setBorderIntensity] = useState("500");
+  const [, setBorderIntensity] = useState("500");
   const [borderEnabled, setBorderEnabled] = useState(false);
 
   const getColorClass = (color: string) => {
@@ -43,9 +43,9 @@ const BorderControls = () => {
             Border Color
             <br />
             <select
-              className={`rounded-full ${getColorClass(
+              className={`rounded-md ${getColorClass(
                 borderColor
-              )} font-semibold border-2 border-black h-9 w-28 text-center text-black`}
+              )} font-semibold border border-black h-9 w-28 text-center text-black`}
               onChange={handleBorderColorChange}
             >
               <option value="" disabled>
@@ -127,11 +127,11 @@ const BorderControls = () => {
             <select
               name=""
               id=""
-              className={`rounded-full  font-semibold border-2 border-black dark:text-neutral-900 text-center`}
+              className={`rounded-md  font-semibold border border-black dark:text-neutral-900 text-center`}
               onChange={handelBorderIntensity}
             >
               <option value="500" className="dark:text-neutral-300">
-                Default (500)
+                -
               </option>
               <option value="50">50</option>
               <option value="100">100</option>

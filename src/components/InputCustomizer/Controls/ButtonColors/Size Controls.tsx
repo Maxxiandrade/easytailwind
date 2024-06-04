@@ -26,7 +26,7 @@ const SizeControls = () => {
         Width
         <input
           type="text"
-          className="rounded-full w-16 ml-5 text-black text-center"
+          className="rounded-md w-16 ml-5 text-black text-center"
           value={buttonWidth}
           onChange={handleWidth}
         />
@@ -37,7 +37,7 @@ const SizeControls = () => {
         Height
         <input
           type="text"
-          className="rounded-full w-16 ml-4 text-black text-center"
+          className="rounded-md w-16 ml-4 text-black text-center"
           value={buttonHeight}
           onChange={handleHeight}
         />

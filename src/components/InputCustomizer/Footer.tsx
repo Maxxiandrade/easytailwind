@@ -7,7 +7,7 @@ import CheckboxControls from "./Controls/CheckboxControls";
 import RadioControls from "./Controls/RadioControls";
 
 const Footer = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const { state } = useMyContext();
 
   return (

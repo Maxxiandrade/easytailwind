@@ -3,7 +3,7 @@ import { useMyContext } from "../../../../inputReducer";
 
 const TextControls = () => {
   const [textColor, setTextColor] = useState("slate");
-  const [textIntensity, setTextIntensity] = useState("500");
+  const [, setTextIntensity] = useState("500");
   const { dispatch } = useMyContext();
   const handleTextColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setTextColor(e.target.value);
@@ -24,9 +24,9 @@ const TextControls = () => {
       Text Color
       <br />
       <select
-        className={`rounded-full ${getColorClass(
+        className={`rounded-md ${getColorClass(
           textColor
-        )} font-semibold border-2 border-black h-9 w-28 text-center text-black `}
+        )} font-semibold border border-black h-9 w-28 text-center text-black `}
         onChange={handleTextColorChange}
       >
         <option value="" disabled>
@@ -107,7 +107,7 @@ const TextControls = () => {
         <select
           name=""
           id=""
-          className={`rounded-full  font-semibold border-2 border-black dark:text-neutral-900 h-9 w-34 text-center `}
+          className={`rounded-md  font-semibold border border-black dark:text-neutral-900 h-9 w-34 text-center `}
           onChange={handleTextIntensity}
         >
           <option value="500" className="dark:text-neutral-300">

@@ -22,7 +22,7 @@ const InputSelect = () => {
       <br />
       <ul className="flex-col justify-center">
         <li
-          className={`text-4xl font-ubuntu ${selectedOption === "Button" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"}  cursor-pointer`}
+          className={`text-2xl font-ubuntu ${selectedOption === "Button" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"}  cursor-pointer`}
           onClick={() => handleOptionSelect("Button")}
         >
           Button
@@ -30,7 +30,7 @@ const InputSelect = () => {
         <br />
         <br />
         <li
-          className={`text-4xl font-ubuntu ${selectedOption === "Radio" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"}  cursor-pointer`}
+          className={`text-2xl font-ubuntu ${selectedOption === "Radio" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"}  cursor-pointer`}
           onClick={() => handleOptionSelect("Radio")}
         >
           Radio
@@ -38,7 +38,7 @@ const InputSelect = () => {
         <br />
         <br />
         <li
-          className={`text-4xl font-ubuntu ${selectedOption === "Checkbox" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"} cursor-pointer`}
+          className={`text-2xl font-ubuntu ${selectedOption === "Checkbox" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"} cursor-pointer`}
           onClick={() => handleOptionSelect("Checkbox")}
         >
           Checkbox
@@ -46,7 +46,7 @@ const InputSelect = () => {
         <br />
         <br />
         <li
-          className={`text-4xl font-ubuntu ${selectedOption === "Text" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"} cursor-pointer`}
+          className={`text-2xl font-ubuntu ${selectedOption === "Text" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"} cursor-pointer`}
           onClick={() => handleOptionSelect("Text") }
         >
           Text
