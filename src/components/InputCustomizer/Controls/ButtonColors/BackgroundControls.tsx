@@ -22,6 +22,7 @@ const BackgroundControls = () => {
       Background Color
       <br />
       <select
+        
         className={`rounded-full ${getColorClass(
           bgColor
         )} font-semibold border-2 border-black h-9 w-34 text-center text-black `}
@@ -30,7 +31,7 @@ const BackgroundControls = () => {
         <option value="" disabled>
           Color
         </option>
-        <option value="white" className="bg-white">
+        <option value="none" className="bg-white">
           None
         </option>
         <option value="slate" className="slate">
@@ -111,8 +112,8 @@ const BackgroundControls = () => {
           className={`rounded-full  font-semibold border-2 border-black dark:text-neutral-900 text-center mt-1`}
           onChange={handleBgIntensity}
         >
-          <option value={bgIntensity} className="dark:text-neutral-300">
-            Default (500)
+          <option value={'0'} className="dark:text-neutral-300">
+            -
           </option>
           <option value="50">50</option>
           <option value="100">100</option>

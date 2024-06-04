@@ -16,26 +16,52 @@ const RoundedControls = () => {
   };
   return (
     <div className="block">
-      <label htmlFor="rounded" className="text-xl dark:text-neutral-300">
+      <label htmlFor="rounded" className="text-xl dark:text-neutral-300 cursor-pointer">
         <input
+          id="rounded"
           type="checkbox"
           value="full"
           checked={selected === "full"}
           onChange={handleCheckboxChange}
-          className="size-4 mr-3"
+          className="size-4 mr-3 mb-4"
         />
-        Rounded
+        Full Rounded
       </label>
       <br />
-      <label htmlFor="semirounded" className="text-xl dark:text-neutral-300">
+      <label htmlFor="smallrounded" className="text-xl dark:text-neutral-300 cursor-pointer">
         <input
+          id="smallrounded"
+          type="checkbox"
+          value="sm"
+          checked={selected === "sm"}
+          onChange={handleCheckboxChange}
+          className="size-4 mr-3 mb-4"
+        />
+        Small Rounded
+      </label>
+      <br />
+      <label htmlFor="mediumrounded" className="text-xl dark:text-neutral-300 cursor-pointer">
+        <input
+          id="mediumrounded"
           type="checkbox"
           value="md"
           checked={selected === "md"}
           onChange={handleCheckboxChange}
-          className="size-4 mr-3"
+          className="size-4 mr-3 mb-4"
         />
-        Semirounded
+        Medium Rounded
+      </label>
+      <br />
+      <label htmlFor="largerounded" className="text-xl dark:text-neutral-300 cursor-pointer">
+        <input
+          id="largerounded"
+          type="checkbox"
+          value="lg"
+          checked={selected === "lg"}
+          onChange={handleCheckboxChange}
+          className="size-4 mr-3 mb-4"
+        />
+        Large Rounded
       </label>
     </div>
   );

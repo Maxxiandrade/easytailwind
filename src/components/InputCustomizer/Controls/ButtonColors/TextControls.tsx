@@ -12,7 +12,6 @@ const TextControls = () => {
   const handleTextIntensity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setTextIntensity(e.target.value);
     dispatch({ type: "textIntensity", payload: e.target.value });
-    console.log(textIntensity);
   };
 
   const getColorClass = (color: string) => {

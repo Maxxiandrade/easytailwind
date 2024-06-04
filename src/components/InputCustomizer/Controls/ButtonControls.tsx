@@ -18,32 +18,39 @@ const ButtonControls = () => {
 
   const handleHoverCheckboxChange = () => {
     setHoverEnabled(!hoverEnabled);
-    dispatch({type:'hover', payload:''})
+    dispatch({type:'hover', payload:'150'})
+    if(hoverEnabled){
+      dispatch({type:'hover', payload:'no'})
+    }
   };
 
   const handleHoverColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setHoverColor(e.target.value);
+   dispatch({type: 'hoverText' , payload: e.target.value})
   };
   const handleHoverIntensity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setHoverIntensity(e.target.value);
+    dispatch({type: 'hoverTextIntensity', payload: e.target.value})
   };
 
   const handleHoverBgColor = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setHoverBgColor(e.target.value);
+    dispatch({type:'hoverBg', payload:e.target.value})
   };
 
   const handleHoverBgIntensity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setHoverBgIntensity(e.target.value);
+    dispatch({type:'hoverBgIntensity', payload:e.target.value})
   };
 
   const handleHoverScale = (e: ChangeEvent<HTMLInputElement>) => {
     setHoverScale(e.target.value);
-    dispatch({type:'scale', payload:'150'})
+    dispatch({type:'hover', payload:e.target.value})
   };
 
   const handleHoverDuration = (e: ChangeEvent<HTMLInputElement>) => {
     setHoverDuration(e.target.value);
-    dispatch({type:'duration', payload:'150'})
+    dispatch({type:'duration', payload:e.target.value})
   };
 
   const getColorClass = (color: string) => {
@@ -293,7 +300,7 @@ const ButtonControls = () => {
             <input
               type="range"
               min="0"
-              max="150"
+              max="10"
               onChange={handleHoverScale}
               value={hoverScale}
             />
@@ -306,7 +313,7 @@ const ButtonControls = () => {
             <input
               type="range"
               min="0"
-              max="1000"
+              max="9"
               onChange={handleHoverDuration}
               value={hoverDuration}
             />

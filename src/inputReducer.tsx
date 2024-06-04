@@ -12,9 +12,12 @@ interface InitialStateType {
     borderIntensity:string;
     w:string;
     h:string;
-    scale:string;
     duration:string;
     hover:string
+    hoverText:string;
+    hoverTextIntensity:string;
+    hoverBg:string;
+    hoverBgIntensity:string;
   }
 
   
@@ -25,8 +28,8 @@ interface MyContextType {
 
 const initialState = {
     input: '',
-    textColor: '',
-    textIntensity: '',
+    textColor: 'text-slate-',
+    textIntensity: '500',
     backgroundColor:'',
     backgroundIntensity:'',
     rounded:'',
@@ -35,9 +38,12 @@ const initialState = {
     borderIntensity:'',
     w:'',
     h:'',
-    scale:'',
     duration:'',
-    hover:''
+    hover:'',
+    hoverText:'',
+    hoverTextIntensity:'500',
+    hoverBg:'',
+    hoverBgIntensity:'500'
   }
   
 type ActionType = { type: string, payload: string }
@@ -56,37 +62,73 @@ type ActionType = { type: string, payload: string }
       case 'Text':
         return { ...state, input: 'Text' };
       case 'textColor':
-        return { ...state, textColor: action.payload}
+        return { ...state, textColor: `text-${action.payload}-`}
       case 'textIntensity':
         return { ...state, textIntensity: action.payload}
       case 'backgroundColor':
-        return { ...state, backgroundColor: action.payload}
+        if(action.payload === 'none'){ return {...state, backgroundColor: '', backgroundIntensity: ''}}
+        return { ...state, backgroundColor: `bg-${action.payload}-`}
       case 'backgroundIntensity':
         return { ...state, backgroundIntensity: action.payload}
       case 'rounded':
-        return { ...state, rounded: action.payload}
+        if(action.payload != ''){
+        return { ...state, rounded: `rounded-${action.payload}`}
+      }else{return{...state, rounded: ''}}
       case 'border':
         if(action.payload === 'no'){
-          return { ...state, border: ''}
+          return { ...state, border: '', borderIntensity:'', borderColor: ''}
         }
         if(action.payload === 'yes'){
           return { ...state, border: 'border'}
         }
         return { ...state}
       case 'borderColor':
-        return { ...state, borderColor: action.payload }
+        return { ...state, borderColor: `-${action.payload}-` }
       case 'borderIntensity':
         return { ...state, borderIntensity: action.payload }
       case 'w':
-        return { ...state, w: action.payload}
+        if(action.payload != ''){
+        return { ...state, w: `w-${action.payload}`}}
+        else{return {...state}}
       case 'h':
-        return { ...state, h: action.payload}
-      case 'hover':
-        return { ...state, hover: 'hover:'}
-      case 'scale':
-        return { ...state, scale: `scale-${action.payload}`}
+        if(action.payload != ''){
+        return { ...state, h: `h-${action.payload}`}}
+        else{return {...state}}
+        case 'hover': {
+          if (action.payload === "no") {
+            return { ...state, hover: '', scale: '', duration: '', hoverText:'', hoverTextIntensity:'', hoverBg:'', hoverBgIntensity:''}; 
+          }
+         if(action.payload === '0') { return { ...state, hover: `hover:scale-0`}}
+         if(action.payload === '1') { return { ...state, hover: `hover:scale-50`}}
+         if(action.payload === '2') { return { ...state, hover: `hover:scale-75`}}
+         if(action.payload === '3') { return { ...state, hover: `hover:scale-90`}}
+         if(action.payload === '4') { return { ...state, hover: `hover:scale-95`}}
+         if(action.payload === '5') { return { ...state, hover: `hover:scale-100`}}
+         if(action.payload === '6') { return { ...state, hover: `hover:scale-105`}}
+         if(action.payload === '7') { return { ...state, hover: `hover:scale-110`}}
+         if(action.payload === '8') { return { ...state, hover: `hover:scale-125`}}
+         if(action.payload === '9') { return { ...state, hover: `hover:scale-150`}}
+          return state;
+        }
       case 'duration':
-        return { ...state, duration: `transition ${action.payload}`}
+        if(action.payload === '1') return { ...state, duration: `transition duration-0`} 
+        if(action.payload === '2') return { ...state, duration: `transition duration-75`}
+        if(action.payload === '3') return { ...state, duration: `transition duration-100`}
+        if(action.payload === '4') return { ...state, duration: `transition duration-150`}
+        if(action.payload === '5') return { ...state, duration: `transition duration-200`}
+        if(action.payload === '6') return { ...state, duration: `transition duration-300`}
+        if(action.payload === '7') return { ...state, duration: `transition duration-500`}
+        if(action.payload === '8') return { ...state, duration: `transition duration-700`}
+        if(action.payload === '9') return { ...state, duration: `transition duration-1000`}
+        return { ...state, duration: `transition duration-${action.payload}`}
+      case 'hoverText':
+        return { ...state, hoverText: `hover:text-${action.payload}-${state.hoverTextIntensity}`}
+      case 'hoverTextIntensity':
+        return { ...state, hoverTextIntensity: action.payload }
+      case 'hoverBg':
+        return { ...state, hoverBg: `hover:bg-${action.payload}-${state.hoverBgIntensity}`}
+      case 'hoverBgIntensity':
+        return { ...state, hoverBgIntensity: action.payload}
       default:
         return state 
     }

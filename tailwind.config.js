@@ -6,13 +6,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   safelist: [
-    { pattern: /^text-/},
-    { pattern: /^bg-/},
+    { pattern: /^text-/,variants: ['hover']},
+    { pattern: /^bg-/,variants: ['hover']},
     { pattern: /^border-/},
     { pattern: /^w-/},
     { pattern: /^h-/},
-    { pattern: /^hover:/},
-    
+    { pattern: /^transition-/ }, 
+    { pattern: /^duration-/ }, 
     { pattern: /^rounded-/}
    ],
   theme: {

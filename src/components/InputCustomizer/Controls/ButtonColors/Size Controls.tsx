@@ -17,7 +17,7 @@ const SizeControls = () => {
   return (
     <div>
       <label htmlFor="" className="text-xl dark:text-neutral-300">
-        Size
+        Size:
         <br />
        
       </label>
