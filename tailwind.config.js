@@ -8,7 +8,12 @@ export default {
   safelist: [
     { pattern: /^text-/},
     { pattern: /^bg-/},
-    { pattern: /^border-/}
+    { pattern: /^border-/},
+    { pattern: /^w-/},
+    { pattern: /^h-/},
+    { pattern: /^hover:/},
+    
+    { pattern: /^rounded-/}
    ],
   theme: {
     extend: {

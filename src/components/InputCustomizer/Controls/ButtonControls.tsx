@@ -14,9 +14,11 @@ const ButtonControls = () => {
   const [hoverBgIntensity, setHoverBgIntensity] = useState("500");
   const [hoverScale, setHoverScale] = useState("150");
   const [hoverDuration, setHoverDuration] = useState("200");
+  const {dispatch} = useMyContext()
 
   const handleHoverCheckboxChange = () => {
     setHoverEnabled(!hoverEnabled);
+    dispatch({type:'hover', payload:''})
   };
 
   const handleHoverColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -36,32 +38,25 @@ const ButtonControls = () => {
 
   const handleHoverScale = (e: ChangeEvent<HTMLInputElement>) => {
     setHoverScale(e.target.value);
-    console.log(e.target.value);
+    dispatch({type:'scale', payload:'150'})
   };
 
   const handleHoverDuration = (e: ChangeEvent<HTMLInputElement>) => {
     setHoverDuration(e.target.value);
-    console.log(e.target.value);
+    dispatch({type:'duration', payload:'150'})
   };
 
   const getColorClass = (color: string) => {
     return color ? `bg-${color}-500` : "";
   };
 
-  const handleLogs = () => {
-    console.log(`Hover ${hoverEnabled ? "Sí" : "No"}`);
-    if (hoverEnabled) {
-      console.log(
-        `Color de texto del hover: ${hoverColor}, con intensidad de: ${hoverIntensity}. BG color: ${hoverBgColor}, con intensidad de: ${hoverBgIntensity}`
-      );
-    }
-  };
   return (
     <div className="flex justify-around">
       <BorderControls />
       <SizeControls />
       <RoundedControls />
       <br />
+      {/* Hover controls */}
       <div>
         <label htmlFor="" className="text-xl dark:text-neutral-300">
           <input

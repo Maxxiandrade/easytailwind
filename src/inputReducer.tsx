@@ -7,6 +7,14 @@ interface InitialStateType {
     backgroundColor: string;
     backgroundIntensity: string;
     rounded:string;
+    border:string;
+    borderColor:string;
+    borderIntensity:string;
+    w:string;
+    h:string;
+    scale:string;
+    duration:string;
+    hover:string
   }
 
   
@@ -21,7 +29,15 @@ const initialState = {
     textIntensity: '',
     backgroundColor:'',
     backgroundIntensity:'',
-    rounded:''
+    rounded:'',
+    border:'',
+    borderColor:'',
+    borderIntensity:'',
+    w:'',
+    h:'',
+    scale:'',
+    duration:'',
+    hover:''
   }
   
 type ActionType = { type: string, payload: string }
@@ -49,6 +65,28 @@ type ActionType = { type: string, payload: string }
         return { ...state, backgroundIntensity: action.payload}
       case 'rounded':
         return { ...state, rounded: action.payload}
+      case 'border':
+        if(action.payload === 'no'){
+          return { ...state, border: ''}
+        }
+        if(action.payload === 'yes'){
+          return { ...state, border: 'border'}
+        }
+        return { ...state}
+      case 'borderColor':
+        return { ...state, borderColor: action.payload }
+      case 'borderIntensity':
+        return { ...state, borderIntensity: action.payload }
+      case 'w':
+        return { ...state, w: action.payload}
+      case 'h':
+        return { ...state, h: action.payload}
+      case 'hover':
+        return { ...state, hover: 'hover:'}
+      case 'scale':
+        return { ...state, scale: `scale-${action.payload}`}
+      case 'duration':
+        return { ...state, duration: `transition ${action.payload}`}
       default:
         return state 
     }

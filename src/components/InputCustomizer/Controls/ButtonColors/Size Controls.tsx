@@ -1,32 +1,25 @@
 import React, { useState } from "react";
+import { useMyContext } from "../../../../inputReducer";
 
 const SizeControls = () => {
-  const [size, setSize] = useState("0");
+  const {dispatch} = useMyContext()
   const [buttonWidth, setButtonWidth] = useState("12");
   const [buttonHeight, setButtonHeight] = useState("6");
-  const handleSize = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSize(e.target.value);
-    console.log(e.target.value);
-  };
 
   const handleWidth = (e: React.ChangeEvent<HTMLInputElement>) => {
     setButtonWidth(e.target.value);
+    dispatch({type:'w',payload:e.target.value})
   };
   const handleHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
     setButtonHeight(e.target.value);
+    dispatch({type:'h',payload:e.target.value})
   };
   return (
     <div>
       <label htmlFor="" className="text-xl dark:text-neutral-300">
         Size
         <br />
-        <input
-          type="range"
-          min="1"
-          max="96"
-          onChange={handleSize}
-          value={size}
-        />
+       
       </label>
       <br />
       <label htmlFor="" className="text-xl dark:text-neutral-300">

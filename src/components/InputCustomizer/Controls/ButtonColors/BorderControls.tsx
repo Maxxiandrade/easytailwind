@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import {useMyContext} from "../../../../inputReducer";
 
 const BorderControls = () => {
+  const {dispatch} = useMyContext()
   const [borderColor, setBorderColor] = useState("slate");
   const [borderIntensity, setBorderIntensity] = useState("500");
   const [borderEnabled, setBorderEnabled] = useState(false);
@@ -11,14 +13,17 @@ const BorderControls = () => {
 
   const handleBorderColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setBorderColor(e.target.value);
+    dispatch({type:'borderColor', payload: e.target.value})
   };
   const handelBorderIntensity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setBorderIntensity(e.target.value);
-    console.log(e.target.value);
+    dispatch({type:'borderIntensity',payload:e.target.value})
   };
   const handleBorderCheckboxChange = () => {
     setBorderEnabled(!borderEnabled);
+    dispatch({type:'border', payload: !borderEnabled ? 'yes' : 'no'})
   };
+ 
   return (
     <div>
       <label htmlFor="" className="text-xl dark:text-neutral-300">
