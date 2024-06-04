@@ -1,9 +1,11 @@
 import { ChangeEvent, useState } from "react";
+import { useMyContext } from "../../../inputReducer";
+
 
 const ButtonControls = () => {
   const [textColor, setTextColor] = useState("slate");
   const [textIntensity, setTextIntensity] = useState("500");
-  const [bgColor, setBgColor] = useState("slate");
+  const [bgColor, setBgColor] = useState("");
   const [bgIntensity, setBgIntensity] = useState("500");
   const [borderColor, setBorderColor] = useState("slate");
   const [borderIntensity, setBorderIntensity] = useState("500");
@@ -11,28 +13,36 @@ const ButtonControls = () => {
   const [hoverEnabled, setHoverEnabled] = useState(false);
   const [hoverColor, setHoverColor] = useState("slate");
   const [hoverIntensity, setHoverIntensity] = useState("500");
-  const [hoverBgColor, setHoverBgColor] = useState("slate");
+  const [hoverBgColor, setHoverBgColor] = useState("");
   const [hoverBgIntensity, setHoverBgIntensity] = useState("500");
   const [hoverScale, setHoverScale] = useState("150");
   const [hoverDuration, setHoverDuration] = useState("200");
   const [size, setSize] = useState("0");
   const [buttonWidth, setButtonWidth] = useState('12')
   const [buttonHeight, setButtonHeight] = useState('6')
+  const [selected, setSelected] = useState<string | null>(null);
+
+  const { dispatch } = useMyContext()
+
 
   const handleTextColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setTextColor(e.target.value);
+    dispatch({type: 'textColor', payload: e.target.value})
   };
   const handleTextIntensity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setTextIntensity(e.target.value);
-    console.log(e.target.value);
+    dispatch({type: 'textIntensity', payload: e.target.value})
+    console.log(textIntensity);
+    
   };
   const handleBgColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setBgColor(e.target.value);
+    dispatch({type: 'backgroundColor', payload: e.target.value})
   };
 
   const handleBgIntensity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setBgIntensity(e.target.value);
-    console.log(e.target.value);
+    dispatch({type: 'backgroundIntensity', payload: e.target.value})
   };
   const getColorClass = (color: string) => {
     return color ? `bg-${color}-500` : "";
@@ -94,6 +104,17 @@ const ButtonControls = () => {
     setButtonHeight(e.target.value) 
     
   }
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (selected === e.target.value) {
+        setSelected(null);
+        dispatch({type: 'rounded', payload:''})
+      } else {
+        setSelected(e.target.value);
+        dispatch({type: 'rounded', payload:e.target.value})
+      }
+      console.log(e.target.value);
+      
+  };
   const handleLogs = () => {
     console.log(`width: ${buttonWidth}, height: ${buttonHeight}`);
     console.log(`Texto ${textColor}, intensidad ${textIntensity}`);
@@ -251,6 +272,29 @@ const ButtonControls = () => {
       <label htmlFor="" className="text-xl dark:text-neutral-300">Height
       <input type="text" className="rounded-full w-16 ml-4 text-black text-center" value={buttonHeight} onChange={handleHeight}/></label>
       </div>
+      <div className="block">
+      <label htmlFor="rounded" className="text-xl dark:text-neutral-300">
+        <input
+          type="checkbox"
+          value="full" // Cambiado a "full"
+          checked={selected === 'full'} // Cambiado a 'full'
+          onChange={handleCheckboxChange}
+          className="size-4 mr-3"
+        />
+        Rounded
+      </label>
+      <br />
+      <label htmlFor="semirounded" className="text-xl dark:text-neutral-300">
+        <input
+          type="checkbox"
+          value="md" // Cambiado a "md"
+          checked={selected === 'md'} // Cambiado a 'md'
+          onChange={handleCheckboxChange}
+          className="size-4 mr-3"
+        />
+        Semirounded
+      </label>
+    </div>
         <br />
       <div>
         <label htmlFor="" className="text-xl dark:text-neutral-300">
@@ -266,7 +310,7 @@ const ButtonControls = () => {
           <>
             <br />
             <label htmlFor="" className="text-xl dark:text-neutral-300">
-              Hover Color & Intensity
+              Hover Text Color & Intensity
               <br />
               <div className="flex justify-between">
                 <select
@@ -382,6 +426,9 @@ const ButtonControls = () => {
                   <option value="" disabled>
                     Color
                   </option>
+                  <option value="white" className="bg-white">
+                    None
+                  </option>
                   <option value="slate" className="slate">
                     Slate
                   </option>
@@ -487,7 +534,7 @@ const ButtonControls = () => {
           <br />
           <br />
           <label htmlFor="" className="text-xl dark:text-neutral-300">
-            Hover Duration
+            Transition Duration
             <br />
             <input type="range" min='0' max='1000' onChange={handleHoverDuration} value={hoverDuration}/>
           </label>
@@ -614,6 +661,9 @@ const ButtonControls = () => {
           <option value="" disabled>
             Color
           </option>
+          <option value="white" className="bg-white">
+                    None
+                  </option>
           <option value="slate" className="slate">
             Slate
           </option>
@@ -693,7 +743,7 @@ const ButtonControls = () => {
             className={`rounded-full  font-semibold border-2 border-black dark:text-neutral-900 text-center mt-1`}
             onChange={handleBgIntensity}
           >
-            <option value="500" className="dark:text-neutral-300">
+            <option value={bgIntensity} className="dark:text-neutral-300">
               Default (500)
             </option>
             <option value="50">50</option>

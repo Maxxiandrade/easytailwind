@@ -3,11 +3,21 @@ import { useMyContext } from "../../inputReducer"
 
 const InputRender = () => {
   const { state } = useMyContext();
-
-  if( state.input === "Button" ){
-    return(
-      <button>Button</button>
-    )
+  const {textColor, backgroundColor, rounded} = state
+  let {textIntensity, backgroundIntensity} = state
+  if(!textIntensity){
+    textIntensity = '500'
+  }
+  if(!backgroundIntensity){
+    backgroundIntensity = '500'
+  }
+  const customClass = `rounded-${rounded} text-${textColor}-${textIntensity} bg-${backgroundColor}-${backgroundIntensity}`
+  
+  if(state.input === "Button") {
+    return (
+      <button className={`${customClass}`} onClick={()=>{console.log(state);
+      }}>{textColor}</button>
+    );
   }
   if( state.input === "Radio" ){
     return(

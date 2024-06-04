@@ -2,6 +2,11 @@ import { ReactNode, createContext, useContext, useReducer } from "react";
 
 interface InitialStateType {
     input: string;
+    textColor: string;
+    textIntensity: string;
+    backgroundColor: string;
+    backgroundIntensity: string;
+    rounded:string;
   }
 
   
@@ -11,12 +16,15 @@ interface MyContextType {
 }
 
 const initialState = {
-    input: ''
+    input: '',
+    textColor: '',
+    textIntensity: '',
+    backgroundColor:'',
+    backgroundIntensity:'',
+    rounded:''
   }
   
-type ActionType = {
-    type: string
-}
+type ActionType = { type: string, payload: string }
 
 
  const MyContext = createContext<MyContextType | undefined>(undefined);
@@ -31,6 +39,16 @@ type ActionType = {
         return { ...state, input : 'Checkbox'};
       case 'Text':
         return { ...state, input: 'Text' };
+      case 'textColor':
+        return { ...state, textColor: action.payload}
+      case 'textIntensity':
+        return { ...state, textIntensity: action.payload}
+      case 'backgroundColor':
+        return { ...state, backgroundColor: action.payload}
+      case 'backgroundIntensity':
+        return { ...state, backgroundIntensity: action.payload}
+      case 'rounded':
+        return { ...state, rounded: action.payload}
       default:
         return state 
     }

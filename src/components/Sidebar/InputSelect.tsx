@@ -9,7 +9,7 @@ const InputSelect = () => {
 
   const handleOptionSelect = (option: string) => {
     setSelectedOption(option);
-    dispatch({type: `${option}`})
+    dispatch({type: `${option}`, payload: option})
   };
 
   return (
