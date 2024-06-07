@@ -4,7 +4,6 @@ import { handleSelection } from "../../../../utils/utils";
 
 const BgColorControl = () => {
   const [bgColor, setBgColor] = useState("");
-  const [bgIntesity, setBgIntensity] = useState("500");
  
   const handleBgColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 
@@ -13,16 +12,14 @@ const BgColorControl = () => {
   const getColorClass = (color: string) => {
     return color ? `bg-${color}-500` : "";
   };
-  const handleBgIntensity = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setBgIntensity(e.target.value);
-  };
+
   const handleBgChange = ()=>{
     if(bgColor === 'none'){
         const customClass = ''
         console.log(customClass);
         
     }
-    const customClass = `bg-${bgColor}-${bgIntesity}`
+    const customClass = `bg-${bgColor}-500`
     handleSelection(customClass)
     console.log(customClass);
     
@@ -112,35 +109,10 @@ const BgColorControl = () => {
         </option>
       </select>
       <br />
-      <label htmlFor="">
-        {" "}
-        Intensity
-        <br />
-        <select
-          name=""
-          id=""
-          className={`rounded-md  font-semibold border border-black dark:text-neutral-900 text-center mt-1`}
-          onChange={handleBgIntensity}
-        >
-          <option value={'0'} className="dark:text-neutral-300">
-            -
-          </option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-          <option value="200">200</option>
-          <option value="300">300</option>
-          <option value="400">400</option>
-          <option value="500">500</option>
-          <option value="600">600</option>
-          <option value="700">700</option>
-          <option value="800">800</option>
-          <option value="900">900</option>
-          <option value="950">950</option>
-        </select>
         <button onClick={handleBgChange}
-        className=" text-neutral-900 dark:text-neutral-300 w-20 h-9 rounded-sm border border-neutral-900 dark:border-neutral-300 hover:scale-110 transition duration-300 ml-3 ">Apply</button>
+        className=" text-neutral-900 dark:text-neutral-300 w-20 h-9 rounded-sm border border-neutral-900 dark:border-neutral-300 hover:scale-110 transition duration-300 ml-3 mt-5">Apply</button>
       </label>
-    </label>
+    
   );
 };
 

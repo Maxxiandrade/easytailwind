@@ -75,10 +75,6 @@ const DecorationControls = () => {
             </label>
           </div>
         )}
-        <button onClick={()=>{
-            console.log(decoration);
-            
-        }}>LOGG</button>
       </div>
   )
 }

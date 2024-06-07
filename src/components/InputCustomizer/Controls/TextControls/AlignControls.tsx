@@ -7,16 +7,12 @@ import { CiTextAlignJustify } from "react-icons/ci";
 const AlignControls = () => {
     const [textAlign, setTextAlign] = useState("text-left");
 
-    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (textAlign === e.target.value) {
-          setTextAlign("text-left");
-          // dispatch({ type: "rounded", payload: "" });
-        } else {
-          setTextAlign(e.target.value);
-          // dispatch({ type: "rounded", payload: e.target.value });
-        }
-        console.log(e.target.value);
-      };
+    const handleCheckboxChange = async(e: React.ChangeEvent<HTMLInputElement>) => {
+          console.log(e.target.value);
+          setTextAlign(e.target.value)
+
+    }
+      
   return (
     <div className="block">
         <label
