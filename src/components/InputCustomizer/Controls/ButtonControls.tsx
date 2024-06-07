@@ -12,13 +12,14 @@ const ButtonControls = () => {
   const [, setHoverIntensity] = useState("500");
   const [hoverBgColor, setHoverBgColor] = useState("");
   const [, setHoverBgIntensity] = useState("500");
-  const [hoverScale, setHoverScale] = useState("150");
+  const [hoverScale, setHoverScale] = useState("100");
   const [hoverDuration, setHoverDuration] = useState("200");
   const {dispatch} = useMyContext()
 
   const handleHoverCheckboxChange = () => {
     setHoverEnabled(!hoverEnabled);
-    dispatch({type:'hover', payload:'150'})
+    dispatch({type:'hover', payload:'9'})
+    dispatch({type:'duration', payload:'9'})
     if(hoverEnabled){
       dispatch({type:'hover', payload:'no'})
     }
