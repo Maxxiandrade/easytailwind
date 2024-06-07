@@ -3,7 +3,7 @@ import Banner from "./components/Banner/Banner";
 import InputRender from "./components/InputRender/InputRender";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/InputCustomizer/Footer"
-import { MyProvider } from "./inputReducer";
+import { MyProvider } from "./buttonReducer";
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 

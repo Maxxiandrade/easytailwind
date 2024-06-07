@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from "react";
-import { useMyContext } from "../../../inputReducer";
+import { useMyContext } from "../../../buttonReducer";
 import BorderControls from "./ButtonColors/BorderControls";
 import SizeControls from "./ButtonColors/Size Controls";
 import RoundedControls from "./ButtonColors/RoundedControls";

@@ -1,36 +1,48 @@
 import React, { useState } from "react";
-import { useMyContext } from "../../../../buttonReducer";
+import { handleSelection } from "../../../../utils/utils";
 
-const TextControls = () => {
-  const [textColor, setTextColor] = useState("slate");
-  const [, setTextIntensity] = useState("500");
-  const { dispatch } = useMyContext();
-  const handleTextColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setTextColor(e.target.value);
-    dispatch({ type: "textColor", payload: e.target.value });
-  };
-  const handleTextIntensity = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setTextIntensity(e.target.value);
-    dispatch({ type: "textIntensity", payload: e.target.value });
-  };
 
+const BgColorControl = () => {
+  const [bgColor, setBgColor] = useState("");
+  const [bgIntesity, setBgIntensity] = useState("500");
+ 
+  const handleBgColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+
+    setBgColor(e.target.value);
+  };
   const getColorClass = (color: string) => {
     return color ? `bg-${color}-500` : "";
   };
-
+  const handleBgIntensity = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setBgIntensity(e.target.value);
+  };
+  const handleBgChange = ()=>{
+    if(bgColor === 'none'){
+        const customClass = ''
+        console.log(customClass);
+        
+    }
+    const customClass = `bg-${bgColor}-${bgIntesity}`
+    handleSelection(customClass)
+    console.log(customClass);
+    
+  }
   return (
     <label htmlFor="" className="text-xl dark:text-neutral-300">
-      
-      Text Color
+      Background Color
       <br />
       <select
+        
         className={`rounded-md ${getColorClass(
-          textColor
-        )} font-semibold border border-black h-9 w-28 text-center text-black `}
-        onChange={handleTextColorChange}
+          bgColor
+        )} font-semibold border border-black h-9 w-34 text-center text-black `}
+        onChange={handleBgColorChange}
       >
         <option value="" disabled>
           Color
+        </option>
+        <option value="none" className="bg-white">
+          None
         </option>
         <option value="slate" className="slate">
           Slate
@@ -107,11 +119,11 @@ const TextControls = () => {
         <select
           name=""
           id=""
-          className={`rounded-md  font-semibold border border-black dark:text-neutral-900 h-9 w-34 text-center `}
-          onChange={handleTextIntensity}
+          className={`rounded-md  font-semibold border border-black dark:text-neutral-900 text-center mt-1`}
+          onChange={handleBgIntensity}
         >
-          <option value="500" className="dark:text-neutral-300">
-            Default (500)
+          <option value={'0'} className="dark:text-neutral-300">
+            -
           </option>
           <option value="50">50</option>
           <option value="100">100</option>
@@ -125,9 +137,11 @@ const TextControls = () => {
           <option value="900">900</option>
           <option value="950">950</option>
         </select>
+        <button onClick={handleBgChange}
+        className=" text-neutral-900 dark:text-neutral-300 w-20 h-9 rounded-sm border border-neutral-900 dark:border-neutral-300 hover:scale-110 transition duration-300 ml-3 ">Apply</button>
       </label>
     </label>
   );
 };
 
-export default TextControls;
+export default BgColorControl;

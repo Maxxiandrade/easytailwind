@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useMyContext } from "../../../../inputReducer";
+import { useMyContext } from "../../../../buttonReducer";
 
 const RoundedControls = () => {
   const { dispatch } = useMyContext();

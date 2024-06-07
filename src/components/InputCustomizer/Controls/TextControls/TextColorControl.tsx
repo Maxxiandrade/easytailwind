@@ -1,26 +1,27 @@
 import React, { useState } from "react";
-import { useMyContext } from "../../../../buttonReducer";
+import { handleSelection } from "../../../../utils/utils";
 
-const TextControls = () => {
+const TextColorControl = () => {
   const [textColor, setTextColor] = useState("slate");
-  const [, setTextIntensity] = useState("500");
-  const { dispatch } = useMyContext();
+  const [textIntensity, setTextIntensity] = useState("500");
   const handleTextColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setTextColor(e.target.value);
-    dispatch({ type: "textColor", payload: e.target.value });
   };
   const handleTextIntensity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setTextIntensity(e.target.value);
-    dispatch({ type: "textIntensity", payload: e.target.value });
   };
 
   const getColorClass = (color: string) => {
     return color ? `bg-${color}-500` : "";
   };
 
+  const handleChange = () => {
+    const customClass = `text-${textColor}-${textIntensity}`
+    handleSelection(customClass);
+  };
+
   return (
     <label htmlFor="" className="text-xl dark:text-neutral-300">
-      
       Text Color
       <br />
       <select
@@ -125,9 +126,13 @@ const TextControls = () => {
           <option value="900">900</option>
           <option value="950">950</option>
         </select>
+        <button onClick={handleChange}
+        className=" text-neutral-900 dark:text-neutral-300 w-20 h-9 rounded-sm border border-neutral-900 dark:border-neutral-300 hover:scale-110 transition duration-300 ml-3 ">
+          Apply
+        </button>
       </label>
     </label>
   );
 };
 
-export default TextControls;
+export default TextColorControl;

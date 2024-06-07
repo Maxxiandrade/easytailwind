@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useMyContext } from "../../inputReducer";
+import { useMyContext } from "../../buttonReducer";
 
 
 
@@ -15,7 +15,7 @@ const InputSelect = () => {
   return (
     <>
       <div className="flex justify-center">
-        <h1 className="text-4xl text-neutral-900 dark:text-neutral-300 font-kanit">Input Select</h1>
+        <h1 className="text-4xl text-neutral-900 dark:text-neutral-300 font-kanit">Component Select</h1>
       </div>
       <br />
       <br />
@@ -30,10 +30,10 @@ const InputSelect = () => {
         <br />
         <br />
         <li
-          className={`text-2xl font-ubuntu ${selectedOption === "Radio" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"}  cursor-pointer`}
-          onClick={() => handleOptionSelect("Radio")}
+          className={`text-2xl font-ubuntu ${selectedOption === "Table" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"}  cursor-pointer`}
+          onClick={() => handleOptionSelect("Table")}
         >
-          Radio
+          Table
         </li>
         <br />
         <br />

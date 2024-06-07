@@ -55,8 +55,8 @@ type ActionType = { type: string, payload: string }
     switch(action.type){
       case 'Button':
         return { ...state, input : 'Button'};
-      case 'Radio':
-        return { ...state, input : 'Radio' };
+      case 'Table':
+        return { ...state, input : 'Table' };
       case 'Checkbox':
         return { ...state, input : 'Checkbox'};
       case 'Text':

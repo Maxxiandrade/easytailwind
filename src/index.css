@@ -39,3 +39,4 @@ select option.purple { @apply bg-purple-500 text-white; }
 select option.fuchsia { @apply bg-fuchsia-500 text-white; }
 select option.pink { @apply bg-pink-500 text-white; }
 select option.rose { @apply bg-rose-500 text-white; }
+

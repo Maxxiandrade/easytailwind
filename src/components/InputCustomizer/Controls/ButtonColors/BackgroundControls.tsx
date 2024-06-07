@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useMyContext } from "../../../../inputReducer";
+import { useMyContext } from "../../../../buttonReducer";
 
 const BackgroundControls = () => {
   const [bgColor, setBgColor] = useState("");
-  const [bgIntensity, setBgIntensity] = useState("500");
+  const [, setBgIntensity] = useState("500");
   const { dispatch } = useMyContext();
   const handleBgColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setBgColor(e.target.value);
@@ -18,7 +18,7 @@ const BackgroundControls = () => {
   };
   return (
     <label htmlFor="" className="text-xl dark:text-neutral-300">
-      <br />
+    
       Background Color
       <br />
       <select

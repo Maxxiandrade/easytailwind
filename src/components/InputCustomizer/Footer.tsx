@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FaArrowUp } from "react-icons/fa6";
 import ButtonControls from "./Controls/ButtonControls";
-import { useMyContext } from "../../inputReducer";
-import TextControls from "./Controls/TextControls";
+import { useMyContext } from "../../buttonReducer";
+import TextControls from "./Controls/TextControls/TextControls";
 import CheckboxControls from "./Controls/CheckboxControls";
 import RadioControls from "./Controls/RadioControls";
 
@@ -70,7 +70,7 @@ const Footer = () => {
       {open && !state.input && (
         <div className="flex justify-center">
           <p className="text-4xl font-kanit mt-16 dark:text-neutral-300">
-            Select an input from the sidebar
+            Select a component from the sidebar
           </p>
         </div>
       )}

@@ -9,7 +9,7 @@ interface Props{
 }
 
 const Sidebar:React.FC<Props> = ({toggleDarkMode, darkMode}) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className={`bg-neutral-200 dark:bg-neutral-700 h-screen p-5 pt-8 transition-all duration-300 ${open ? "w-72" : "w-20"} relative shadow-right dark:shadow-innerCustom inset-x-0 inset-y-0`}>
