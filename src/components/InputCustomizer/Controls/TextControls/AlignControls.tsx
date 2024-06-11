@@ -3,14 +3,17 @@ import { CiTextAlignLeft } from "react-icons/ci";
 import { CiTextAlignRight } from "react-icons/ci";
 import { CiTextAlignCenter } from "react-icons/ci";
 import { CiTextAlignJustify } from "react-icons/ci";
+import {useMyContext} from "../../../../buttonReducer"
 
 const AlignControls = () => {
+    const {textDispatch} = useMyContext()
+
     const [textAlign, setTextAlign] = useState("text-left");
 
     const handleCheckboxChange = async(e: React.ChangeEvent<HTMLInputElement>) => {
           console.log(e.target.value);
           setTextAlign(e.target.value)
-
+          textDispatch({type:'align', payload:e.target.value})
     }
       
   return (

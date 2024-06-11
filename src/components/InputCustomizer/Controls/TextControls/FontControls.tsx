@@ -30,15 +30,7 @@ const FontControls = () => {
         <option value="font-cursive" className="font-cursive dark:text-neutral-900">
           Cursive
         </option> 
-      </select>
-      </label>
-
-        <br />
-
-      <label htmlFor="" className="mr-2 text-xl text-neutral-900 dark:text-neutral-300">Weight
-      <br />
-      <select name="" id="" className="rounded-md h-10 border border-neutral-900 dark:border-neutral-300 dark:text-neutral-900"> 
-      <option value="font-thin" className="font-thin dark:text-neutral-900">
+        <option value="font-thin" className="font-thin dark:text-neutral-900">
           Thin
         </option>
         <option value="font-extralight" className="font-extralight dark:text-neutral-900">
@@ -67,6 +59,7 @@ const FontControls = () => {
         </option>
       </select>
       </label>
+
           </div>
   )
 }

@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { handleSelection } from "../../../../utils/utils";
 
 const TextColorControl = () => {
-  const [textColor, setTextColor] = useState("slate");
+  const [textColor, setTextColor] = useState("");
   const handleTextColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setTextColor(e.target.value);
+    const customClass = `text-${e.target.value}-500`
+    handleSelection(customClass);
   };
  
 
@@ -12,10 +14,6 @@ const TextColorControl = () => {
     return color ? `bg-${color}-500` : "";
   };
 
-  const handleChange = () => {
-    const customClass = `text-${textColor}-500`
-    handleSelection(customClass);
-  };
 
   return (
     <label htmlFor="" className="text-xl dark:text-neutral-300">
@@ -29,6 +27,9 @@ const TextColorControl = () => {
       >
         <option value="" disabled>
           Color
+        </option>
+        <option value="none" className="bg-white">
+          None
         </option>
         <option value="slate" className="slate">
           Slate
@@ -98,11 +99,6 @@ const TextColorControl = () => {
         </option>
       </select>
       <br />
-        
-        <button onClick={handleChange}
-        className=" text-neutral-900 dark:text-neutral-300 w-20 h-9 rounded-sm border border-neutral-900 dark:border-neutral-300 hover:scale-110 transition duration-300 ml-3 mt-5">
-          Apply
-        </button>
       </label>
   );
 };

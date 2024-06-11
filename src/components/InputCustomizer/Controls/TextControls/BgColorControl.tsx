@@ -8,28 +8,20 @@ const BgColorControl = () => {
   const handleBgColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 
     setBgColor(e.target.value);
+    const customClass = `bg-${e.target.value}-500`
+    handleSelection(customClass)
+
   };
   const getColorClass = (color: string) => {
     return color ? `bg-${color}-500` : "";
   };
 
-  const handleBgChange = ()=>{
-    if(bgColor === 'none'){
-        const customClass = ''
-        console.log(customClass);
-        
-    }
-    const customClass = `bg-${bgColor}-500`
-    handleSelection(customClass)
-    console.log(customClass);
-    
-  }
+
   return (
     <label htmlFor="" className="text-xl dark:text-neutral-300">
       Background Color
       <br />
       <select
-        
         className={`rounded-md ${getColorClass(
           bgColor
         )} font-semibold border border-black h-9 w-34 text-center text-black `}
@@ -109,9 +101,7 @@ const BgColorControl = () => {
         </option>
       </select>
       <br />
-        <button onClick={handleBgChange}
-        className=" text-neutral-900 dark:text-neutral-300 w-20 h-9 rounded-sm border border-neutral-900 dark:border-neutral-300 hover:scale-110 transition duration-300 ml-3 mt-5">Apply</button>
-      </label>
+         </label>
     
   );
 };
