@@ -5,15 +5,13 @@ const TextColorControl = () => {
   const [textColor, setTextColor] = useState("");
   const handleTextColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setTextColor(e.target.value);
-    const customClass = `text-${e.target.value}-500`
+    const customClass = `text-${e.target.value}-500`;
     handleSelection(customClass);
   };
- 
 
   const getColorClass = (color: string) => {
     return color ? `bg-${color}-500` : "";
   };
-
 
   return (
     <label htmlFor="" className="text-xl dark:text-neutral-300">
@@ -99,7 +97,7 @@ const TextColorControl = () => {
         </option>
       </select>
       <br />
-      </label>
+    </label>
   );
 };
 

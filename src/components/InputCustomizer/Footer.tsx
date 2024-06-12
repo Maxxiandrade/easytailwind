@@ -3,7 +3,6 @@ import { FaArrowUp } from "react-icons/fa6";
 import ButtonControls from "./Controls/ButtonColors/ButtonControls";
 import { useMyContext } from "../../buttonReducer";
 import TextControls from "./Controls/TextControls/TextControls";
-import RadioControls from "./Controls/RadioControls";
 import ImageControls from "./Controls/ImageControls/ImageControls";
 
 const Footer = () => {
@@ -37,21 +36,11 @@ const Footer = () => {
           <ButtonControls />
         </>
       )}
-      {open && state.input === "Radio" && (
-        <>
-          <div className="flex justify-center mt-5">
-            <h1 className="text-neutral-900 dark:text-neutral-300 text-4xl font-kanit">
-              Radio Controls
-            </h1>
-          </div>
-          <RadioControls />
-        </>
-      )}
       {open && state.input === "Image" && (
         <>
           <div className="flex justify-center mt-5">
             <h1 className="text-neutral-900 dark:text-neutral-300 text-4xl font-kanit">
-            Image Controls
+              Image Controls
             </h1>
           </div>
           <ImageControls />

@@ -1,32 +1,44 @@
-import { useMyContext } from "../../buttonReducer"
+import { useMyContext } from "../../buttonReducer";
 import ButtonRender from "./ButtonRender";
 import ImageRender from "./ImageRender";
-import TableRender from "./TableRender";
 import TextRender from "./TextRender";
+import { CiLinkedin } from "react-icons/ci";
+import { IoLogoGithub } from "react-icons/io";
 
 const InputRender = () => {
   const { state } = useMyContext();
-  const input = state.input
- 
+  const input = state.input;
 
-  switch(input){
-    case 'Button':
-      return <ButtonRender/>
-    case 'Table':
-      return <TableRender/>
-    case 'Image':
-      return (<ImageRender/>)
-    case 'Text':
-      return(<TextRender/>)
+  switch (input) {
+    case "Button":
+      return <ButtonRender />;
+    case "Image":
+      return <ImageRender />;
+    case "Text":
+      return <TextRender />;
     default:
       return (
-        <div className="block  max-w-7xl">
-          <h2 className="text-5xl justify-center items-center font-ubuntu text-center text-neutral-900 dark:text-neutral-300">Welcome to Easy Tailwind. A tool where you can create and customize components to your own style, saving time and ensuring consistency across your projects.</h2>
-        <br />
-        <br />
-          <h3 className="text-4xl justify-center items-center font-ubuntu text-center text-neutral-900 dark:text-neutral-300">Start by selecting a component from the sidebar</h3>
-        </div>
-      )
+        <>
+          <div className="flex">
+            <p className="text-4xl dark:text-neutral-300 ">
+              Customize and preview your components with Easy Tailwind
+            </p>
+          </div>
+          <br />
+          <div className="flex max-w-7xl justify-around absolute bottom-20">
+            <p className="text-3xl dark:text-neutral-300 ">About:</p>
+            <a
+              href="https://www.linkedin.com/in/maximiliano-andrade-8ab0b6213/"
+              target="_blank"
+            >
+              <CiLinkedin className="size-10 cursor-pointer dark:text-neutral-300" />
+            </a>
+            <a href="https://github.com/Maxxiandrade" target="_blank">
+              <IoLogoGithub className="size-10 cursor-pointer dark:text-neutral-300" />
+            </a>
+          </div>
+        </>
+      );
   }
-}
-export default InputRender
+};
+export default InputRender;

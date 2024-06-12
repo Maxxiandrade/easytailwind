@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import { handleSelection } from "../../../../utils/utils";
 
-
 const BgColorControl = () => {
   const [bgColor, setBgColor] = useState("");
- 
+
   const handleBgColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-
     setBgColor(e.target.value);
-    const customClass = `bg-${e.target.value}-500`
-    handleSelection(customClass)
-
+    const customClass = `bg-${e.target.value}-500`;
+    handleSelection(customClass);
   };
   const getColorClass = (color: string) => {
     return color ? `bg-${color}-500` : "";
   };
-
 
   return (
     <label htmlFor="" className="text-xl dark:text-neutral-300">
@@ -101,8 +97,7 @@ const BgColorControl = () => {
         </option>
       </select>
       <br />
-         </label>
-    
+    </label>
   );
 };
 

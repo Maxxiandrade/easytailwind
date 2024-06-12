@@ -12,11 +12,13 @@ const RoundedControls = () => {
       setSelected(e.target.value);
       imageDispatch({ type: "rounded", payload: e.target.value });
     }
-    console.log(e.target.value);
   };
   return (
     <div className="block">
-      <label htmlFor="rounded" className="text-xl dark:text-neutral-300 cursor-pointer">
+      <label
+        htmlFor="rounded"
+        className="text-xl dark:text-neutral-300 cursor-pointer"
+      >
         <input
           id="rounded"
           type="checkbox"
@@ -28,7 +30,10 @@ const RoundedControls = () => {
         Full Rounded
       </label>
       <br />
-      <label htmlFor="smallrounded" className="text-xl dark:text-neutral-300 cursor-pointer">
+      <label
+        htmlFor="smallrounded"
+        className="text-xl dark:text-neutral-300 cursor-pointer"
+      >
         <input
           id="smallrounded"
           type="checkbox"
@@ -40,7 +45,10 @@ const RoundedControls = () => {
         Small Rounded
       </label>
       <br />
-      <label htmlFor="mediumrounded" className="text-xl dark:text-neutral-300 cursor-pointer">
+      <label
+        htmlFor="mediumrounded"
+        className="text-xl dark:text-neutral-300 cursor-pointer"
+      >
         <input
           id="mediumrounded"
           type="checkbox"
@@ -52,7 +60,10 @@ const RoundedControls = () => {
         Medium Rounded
       </label>
       <br />
-      <label htmlFor="largerounded" className="text-xl dark:text-neutral-300 cursor-pointer">
+      <label
+        htmlFor="largerounded"
+        className="text-xl dark:text-neutral-300 cursor-pointer"
+      >
         <input
           id="largerounded"
           type="checkbox"

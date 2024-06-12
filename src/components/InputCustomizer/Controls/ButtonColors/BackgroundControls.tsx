@@ -18,11 +18,9 @@ const BackgroundControls = () => {
   };
   return (
     <label htmlFor="" className="text-xl dark:text-neutral-300">
-    
       Background Color
       <br />
       <select
-        
         className={`rounded-md ${getColorClass(
           bgColor
         )} font-semibold border border-black h-9 w-34 text-center text-black `}
@@ -112,7 +110,7 @@ const BackgroundControls = () => {
           className={`rounded-md  font-semibold border border-black dark:text-neutral-900 text-center mt-1`}
           onChange={handleBgIntensity}
         >
-          <option value={'0'} className="dark:text-neutral-300">
+          <option value={"0"} className="dark:text-neutral-300">
             -
           </option>
           <option value="50">50</option>

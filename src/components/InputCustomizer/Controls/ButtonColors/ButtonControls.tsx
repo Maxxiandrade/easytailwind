@@ -14,44 +14,44 @@ const ButtonControls = () => {
   const [, setHoverBgIntensity] = useState("500");
   const [hoverScale, setHoverScale] = useState("100");
   const [hoverDuration, setHoverDuration] = useState("200");
-  const {dispatch} = useMyContext()
+  const { dispatch } = useMyContext();
 
   const handleHoverCheckboxChange = () => {
     setHoverEnabled(!hoverEnabled);
-    dispatch({type:'hover', payload:'9'})
-    dispatch({type:'duration', payload:'9'})
-    if(hoverEnabled){
-      dispatch({type:'hover', payload:'no'})
+    dispatch({ type: "hover", payload: "9" });
+    dispatch({ type: "duration", payload: "9" });
+    if (hoverEnabled) {
+      dispatch({ type: "hover", payload: "no" });
     }
   };
 
   const handleHoverColorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setHoverColor(e.target.value);
-   dispatch({type: 'hoverText' , payload: e.target.value})
+    dispatch({ type: "hoverText", payload: e.target.value });
   };
   const handleHoverIntensity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setHoverIntensity(e.target.value);
-    dispatch({type: 'hoverTextIntensity', payload: e.target.value})
+    dispatch({ type: "hoverTextIntensity", payload: e.target.value });
   };
 
   const handleHoverBgColor = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setHoverBgColor(e.target.value);
-    dispatch({type:'hoverBg', payload:e.target.value})
+    dispatch({ type: "hoverBg", payload: e.target.value });
   };
 
   const handleHoverBgIntensity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setHoverBgIntensity(e.target.value);
-    dispatch({type:'hoverBgIntensity', payload:e.target.value})
+    dispatch({ type: "hoverBgIntensity", payload: e.target.value });
   };
 
   const handleHoverScale = (e: ChangeEvent<HTMLInputElement>) => {
     setHoverScale(e.target.value);
-    dispatch({type:'hover', payload:e.target.value})
+    dispatch({ type: "hover", payload: e.target.value });
   };
 
   const handleHoverDuration = (e: ChangeEvent<HTMLInputElement>) => {
     setHoverDuration(e.target.value);
-    dispatch({type:'duration', payload:e.target.value})
+    dispatch({ type: "duration", payload: e.target.value });
   };
 
   const getColorClass = (color: string) => {

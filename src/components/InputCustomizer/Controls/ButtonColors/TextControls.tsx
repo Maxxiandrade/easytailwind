@@ -20,7 +20,6 @@ const TextControls = () => {
 
   return (
     <label htmlFor="" className="text-xl dark:text-neutral-300">
-      
       Text Color
       <br />
       <select
