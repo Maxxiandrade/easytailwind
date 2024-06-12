@@ -2,28 +2,22 @@ import { useState } from "react";
 import { handleSelection } from '../../../../utils/utils';
 
 const DecorationControls = () => {
-  const [decoration, setDecoration] = useState<string | null>(null);
   const [decorationEnabled, setDecorationEnabled] = useState(false);
 
-  const handleDecorationCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedDecoration = e.target.value;
-    if (decoration === selectedDecoration) {
-      handleSelection("none");
-      setDecoration(null);
-    } else {
-      handleSelection(selectedDecoration);
-      setDecoration(selectedDecoration);
-    }
-  };
+
 
   const handleEnabledCheckbox = () => {
     const newEnabledState = !decorationEnabled;
     setDecorationEnabled(newEnabledState);
     if (!newEnabledState) {
-      setDecoration(null);
       handleSelection("none");
     }
   };
+
+  const handleButton = (e:React.MouseEvent<HTMLButtonElement>)=>{
+    const buttonValue = (e.currentTarget as HTMLButtonElement).value;
+  handleSelection(buttonValue);
+  }
 
   return (
     <div>
@@ -38,30 +32,12 @@ const DecorationControls = () => {
         Decoration
       </label>
       {decorationEnabled && (
-        <div className="block space-y-5">
-          <label htmlFor="line-through" className="line-through text-xl dark:text-neutral-300 cursor-pointer">
-            <input
-              type="checkbox"
-              id="line-through"
-              className="size-7 mr-2"
-              onChange={handleDecorationCheckbox}
-              checked={decoration === "line-through"}
-              value="line-through"
-            />{" "}
-            Line through
-          </label>
+        <div className="block space-y-5 ">
+          
+          <button className="border border-black px-2 rounded-sm dark:border-neutral-300 line-through text-xl dark:text-neutral-300 mt-3 " onClick={handleButton} value={'line-through'}>Line through</button>
           <br />
-          <label htmlFor="underline" className="underline text-xl dark:text-neutral-300 cursor-pointer">
-            <input
-              type="checkbox"
-              id="underline"
-              className="size-7 mr-2"
-              onChange={handleDecorationCheckbox}
-              checked={decoration === "underline"}
-              value="underline"
-            />{" "}
-            Underline
-          </label>
+          
+          <button className="border border-black px-2 rounded-sm dark:border-neutral-300 underline text-xl dark:text-neutral-300" onClick={handleButton} value={'underline'}>Underline</button>
         </div>
       )}
     </div>

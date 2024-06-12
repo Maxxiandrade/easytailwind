@@ -28,14 +28,14 @@ const InputSelect = () => {
           Button
         </li>
         <br />
-        <br />
+        {/* <br />
         <li
           className={`text-2xl font-ubuntu ${selectedOption === "Table" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"}  cursor-pointer`}
           onClick={() => handleOptionSelect("Table")}
         >
           Table
         </li>
-        <br />
+        <br /> */}
         <br />
         <li
           className={`text-2xl font-ubuntu ${selectedOption === "Image" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"} cursor-pointer`}
