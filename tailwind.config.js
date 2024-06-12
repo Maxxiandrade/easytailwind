@@ -13,7 +13,8 @@ export default {
     { pattern: /^h-/},
     { pattern: /^transition-/ }, 
     { pattern: /^duration-/ }, 
-    { pattern: /^rounded-/}
+    { pattern: /^rounded-/},
+    { pattern: /^size-/}
    ],
   theme: {
     extend: {

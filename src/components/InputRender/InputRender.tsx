@@ -1,5 +1,6 @@
 import { useMyContext } from "../../buttonReducer"
 import ButtonRender from "./ButtonRender";
+import ImageRender from "./ImageRender";
 import TableRender from "./TableRender";
 import TextRender from "./TextRender";
 
@@ -13,8 +14,8 @@ const InputRender = () => {
       return <ButtonRender/>
     case 'Table':
       return <TableRender/>
-    case 'Checkbox':
-      return (<p>Checkbox</p>)
+    case 'Image':
+      return (<ImageRender/>)
     case 'Text':
       return(<TextRender/>)
     default:

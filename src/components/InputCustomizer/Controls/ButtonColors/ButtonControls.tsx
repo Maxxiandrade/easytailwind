@@ -1,10 +1,10 @@
 import { ChangeEvent, useState } from "react";
-import { useMyContext } from "../../../buttonReducer";
-import BorderControls from "./ButtonColors/BorderControls";
-import SizeControls from "./ButtonColors/Size Controls";
-import RoundedControls from "./ButtonColors/RoundedControls";
-import BackgroundControls from "./ButtonColors/BackgroundControls";
-import TextControls from "./ButtonColors/TextControls";
+import { useMyContext } from "../../../../buttonReducer";
+import BorderControls from "./BorderControls";
+import SizeControls from "./Size Controls";
+import RoundedControls from "./RoundedControls";
+import BackgroundControls from "./BackgroundControls";
+import TextControls from "./TextControls";
 
 const ButtonControls = () => {
   const [hoverEnabled, setHoverEnabled] = useState(false);

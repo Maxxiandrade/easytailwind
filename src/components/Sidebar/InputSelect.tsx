@@ -38,10 +38,10 @@ const InputSelect = () => {
         <br />
         <br />
         <li
-          className={`text-2xl font-ubuntu ${selectedOption === "Checkbox" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"} cursor-pointer`}
-          onClick={() => handleOptionSelect("Checkbox")}
+          className={`text-2xl font-ubuntu ${selectedOption === "Image" ? "text-green-500" : "text-neutral-900 dark:text-neutral-300"} cursor-pointer`}
+          onClick={() => handleOptionSelect("Image")}
         >
-          Checkbox
+          Image
         </li>
         <br />
         <br />

@@ -9,9 +9,9 @@ const TextRender = () => {
   const copyToClipboard = () => {
     const editableDiv = document.getElementById('editable-content');
     if (editableDiv) {
-        // Crear un nuevo div dinámicamente
+        
         const wrapperDiv = document.createElement('div');
-        wrapperDiv.className = `${align}`; // Establece la clase que desees
+        wrapperDiv.className = `${align}`; 
 
         // Clonar el contenido del editableDiv al nuevo wrapperDiv
         wrapperDiv.innerHTML = editableDiv.innerHTML;

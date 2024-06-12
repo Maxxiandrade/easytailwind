@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { FaArrowUp } from "react-icons/fa6";
-import ButtonControls from "./Controls/ButtonControls";
+import ButtonControls from "./Controls/ButtonColors/ButtonControls";
 import { useMyContext } from "../../buttonReducer";
 import TextControls from "./Controls/TextControls/TextControls";
-import CheckboxControls from "./Controls/CheckboxControls";
 import RadioControls from "./Controls/RadioControls";
+import ImageControls from "./Controls/ImageControls/ImageControls";
 
 const Footer = () => {
   const [open, setOpen] = useState(false);
@@ -47,14 +47,14 @@ const Footer = () => {
           <RadioControls />
         </>
       )}
-      {open && state.input === "Checkbox" && (
+      {open && state.input === "Image" && (
         <>
           <div className="flex justify-center mt-5">
             <h1 className="text-neutral-900 dark:text-neutral-300 text-4xl font-kanit">
-              Checkbox Controls
+            Image Controls
             </h1>
           </div>
-          <CheckboxControls />
+          <ImageControls />
         </>
       )}
       {open && state.input === "Text" && (
